@@ -23,6 +23,33 @@ run
 rustam@rustam-zenbook:~/java-education/hello_world$ java HelloWorld 
 Hello world!
 ```
+## create jar archive 
+```
+rustam@rustam-zenbook:~/java-education/hello_world$ jar cfe hw.jar HelloWorld HelloWorld.class 
+rustam@rustam-zenbook:~/java-education/hello_world$ ll
+total 28
+drwxrwxr-x 2 rustam rustam 4096 Dec  4 20:20 ./
+drwxrwxr-x 4 rustam rustam 4096 Dec  4 20:14 ../
+-rw-rw-r-- 1 rustam rustam  426 Dec  4 20:09 HelloWorld.class
+-rw-rw-r-- 1 rustam rustam  112 Dec  4 20:06 HelloWorld.java
+-rw-rw-r-- 1 rustam rustam  760 Dec  4 20:20 hw.jar
+-rw-rw-r-- 1 rustam rustam 6761 Dec  4 20:13 readme.md
+```
+manifest
+```
+rustam@rustam-zenbook:~/java-education/hello_world$ jar tf hw.jar 
+META-INF/
+META-INF/MANIFEST.MF
+HelloWorld.class
+```
+run from archive 
+```
+rustam@rustam-zenbook:~/java-education/hello_world$ java -jar hw.jar 
+Hello world!
+rustam@rustam-zenbook:~/java-education/hello_world$ java -classpath hw.jar HelloWorld
+Hello world!
+
+```
 ## additional info
 created class file 
 ```
