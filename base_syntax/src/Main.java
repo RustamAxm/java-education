@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -29,7 +31,26 @@ public class Main {
         return true;
     }
 
+    public static BigInteger factorial(int value) {
+        BigInteger result = BigInteger.ONE;
+        for (int i = 2; i <= value; i++) {
+            result = result.multiply(BigInteger.valueOf(i));
+        }
+        return result;
+    }
+
+    public static int[] mergeArrays(int[] a1, int[] a2) {
+        int [] result = new int[a1.length + a2.length];
+        int pos1 = 0;
+        int pos2 = 0;
+        while(pos1 < a1.length || pos2 < a2.length) {
+            result[pos1 + pos2] = (pos1 < a1.length && (pos2 == a2.length || a1[pos1] < a2[pos2]) ?
+                    a1[pos1++] : a2[pos2++]);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
-        System.out.println(isPalindrome("Madam, I'm Adam!"));
+        System.out.println(factorial(4));
     }
 }
