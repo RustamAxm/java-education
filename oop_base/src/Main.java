@@ -10,5 +10,7 @@ public class Main {
         ComplexNumber comp2 = new ComplexNumber(0.1, 0.2);
         System.out.println(comp.getIm());
         System.out.println(comp.equals(comp2));
+
+        System.out.println(Integrate.integrate(x -> 1, 0, 10));
     }
 }
