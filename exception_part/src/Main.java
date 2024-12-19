@@ -23,7 +23,7 @@ public class Main {
         LOGGER3.addHandler(handler);
         LOGGER3.setUseParentHandlers(false);
     }
-    
+
     public static void main(String[] args) {
 
         System.out.println(sqrt(2));
