@@ -2,6 +2,9 @@
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -11,6 +14,18 @@ public class Main {
 
         new_set.removeIf(item -> set1.contains(item) && set2.contains(item));
         return new_set;
+    }
+
+    public static <T, U> Function<T, U> ternaryOperator(
+            Predicate<? super T> condition,
+            Function<? super T, ? extends U> ifTrue,
+            Function<? super T, ? extends U> ifFalse) {
+
+        return item -> condition.test(item) ? ifTrue.apply(item) : ifFalse.apply(item); // your implementation here
+    }
+
+    public static IntStream pseudoRandomStream(int seed) {
+        return IntStream.iterate(seed, n -> ((n * n) / 10) % 1000); // your implementation here
     }
 
     public static void main(String[] args) {
@@ -25,5 +40,8 @@ public class Main {
                 x->{System.out.println(String.valueOf(x));
                 }
                 );
+
+        IntStream stream = pseudoRandomStream(12);
+        stream.forEach(System.out::println);
     }
 }
