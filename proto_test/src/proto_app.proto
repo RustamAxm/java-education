@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "./; main";
+
+option java_package = "org.example.protobuf";
+option java_outer_classname = "ApplicationProtos";
+
+
+message Application
+{
+    uint32 payload = 1;
+}
